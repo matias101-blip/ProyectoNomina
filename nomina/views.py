@@ -9,4 +9,6 @@ def Inicio(request):
 
 def Lista(request):
     empleados = Empleado.objects.all()
-    return render(request, 'lista_nominas.jinja',{"empleados":empleados})
+    return render(request, 'lista_nominas.jinja',{"empleados":empleados}
+
+#hola
