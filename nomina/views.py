@@ -1,21 +1,17 @@
 from django.http import HttpResponse, HttpResponseRedirect
-from django.shortcuts import render
-<<<<<<< HEAD
-from django.contrib.auth.forms import UserCreationForm
+from django.shortcuts import redirect, render
+from django.contrib.auth.forms import UserCreationForm,AuthenticationForm
 from django.contrib.auth.models import User
-from django.contrib.auth import login
+from django.contrib.auth import login,logout,authenticate
 from django.db import IntegrityError
-from nomina.models import Empleado
-=======
-
 from nomina.models import Cargo, Departamento, Empleado, Rol, TipoContrato
->>>>>>> 868ab25781ae6bb489d00f4a8c2fc537f1977da4
 
 # Create your views here.
 def Inicio(request):
     return render(request,'Inicio.jinja')
 
 def Empleados(request):
+    empleados=Empleado.objects.all()
     empleados_dict = [{"Nombre":emp.nombre, "Cedula":emp.cedula,"Direccion":emp.direccion,"Sexo":emp.sexo,"Sueldo":emp.sueldo,"Cargo":emp.cargo.descripcion,"Departamento":emp.departamento.descripcion,"Contrato":emp.tipo_contrato.descripcion} for emp in empleados]
     return render(request, 'lista_nominas.jinja',{"table_body":empleados_dict})
 
@@ -43,6 +39,26 @@ def Secion(request):
                 'form':UserCreationForm,
                 'error':'Las contrase;as no coinciden'
                 })
+
+def singout(request):
+    logout(request)
+    return HttpResponseRedirect('/')
+
+def signin(request):
+    if request.method == 'GET':
+        return render(request,'signin.jinja',{'form':AuthenticationForm})
+    else:
+        user = authenticate(request,username=request.POST['username'], password=request.POST['password'])
+        if user is None:
+            return render(request,'signin.jinja',
+                          {'form':AuthenticationForm,
+                           'error':"Tu usuario o contrasena  esta incorrecta"})
+        else:
+            login(request,user)
+            return redirect('Lista')
+
+
+
 
 def Departamentos(request):
     departamentos = Departamento.objects.all()

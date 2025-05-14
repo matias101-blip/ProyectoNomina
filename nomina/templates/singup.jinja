@@ -1,13 +1,31 @@
 {%extends "index.jinja"%}
 
 {%block body%}
-    <h1>inicia Secion</h1>
-    {{error}}
-    <form method="POST" action="{%url 'Secion'%}">
-        {%csrf_token%}
-        {{form.as_p}}
-        <button>
-            singup
-        </button>
-    </form>
+    <main class="container">
+        <div class="row">
+            <div class="col-md-4 offset-md-4 mt-3">
+                <h1 class="text-center">Registrate Ahora :3</h1>
+                {{error}}
+                <form method="POST" class="card card-body" action="{%url 'Secion'%}">
+                    {%csrf_token%}
+                    <div class="mb-3">
+                        <label for="username">Username</label>
+                        <input type="text" name="username" id="username" class="form-control" placeholder="Escribe tu usuario" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="password1">Pasword</label>
+                        <input type="text" name="password1" id="password1" class="form-control" placeholder="Escribe tu contrana" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="password2">Confirma tu contrasena</label>
+                        <input type="text" name="password2" id="password2" class="form-control" placeholder="Confirma tu contrasena" />
+                    </div>
+                    <button class="btn  btn-primary">
+                        singup
+                    </button>
+                </form>
+            </div>
+        </div>
+
+    </main>
 {%endblock%}
