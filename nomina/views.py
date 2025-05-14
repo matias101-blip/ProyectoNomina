@@ -1,7 +1,9 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+from django.contrib.auth import login
+from django.db import IntegrityError
 from nomina.models import Empleado
 
 # Create your views here.
@@ -22,10 +24,11 @@ def Secion(request):
                 # Resgistra usuario
                 user = User.objects.create_user(username=request.POST['username'], password=request.POST['password1'])
                 user.save()
-                return HttpResponse('Usuario creado bien')
+                login(request,user)
+                return HttpResponseRedirect('/listado/')
 
 
-            except:
+            except IntegrityError:
                 return render(request,'singup.jinja',{
                     'form':UserCreationForm,
                 'error':'El usuario ya existe'})
