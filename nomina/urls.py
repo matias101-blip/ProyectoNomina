@@ -7,4 +7,17 @@ urlpatterns = [
     path("cargo_listado/",Cargos, name='ListadoCargo'),
     path("contrato_listado/",Contrato, name='ListadoContrato'),
     path("nominas_listado/",Nominas, name='ListadoNominas'),
+    # Urls de creacion
+    path("crear_empleado",CrearEmpleado, name="Crear_Empleado"),
+    path("crear_nominas/",CrearNominas,name="Crear_Nomina"),
+    path("crear_cargo/",CrearCargo,name="Crear_Cargo"),
+    path("crear_departamento/",CrearDepartamento,name="Crear_Departamento"),
+    path("crear_contrato/",CrearContrato,name="Crear_Contrato"),
+    # Urls de Update
+    path("update_empleado/<int:id>/",UpdateEmpleado,name="Update_Empleado"),
+    path("update_nomina/<int:id>/",UpdateNomina,name="Update_Nomina"),
+    path("update_cargo/<int:id>/",UpdateCargo,name="Update_Cargo"),
+    path("update_departamento/<int:id>/",UpdateDepartamento,name="Update_Departamento"),
+    path("update_contrato/<int:id>/",UpdateContrato,name="Update_Contrato"),
+    path('delate/<str:modelo>/<int:id>',Eliminar,name="Eliminar")
 ]

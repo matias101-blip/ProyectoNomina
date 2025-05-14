@@ -11,7 +11,8 @@
       <h1>Listado de Cargos</h1>
     </div>
     <div class="row">
-      {% include 'componentes/tabla.jinja' with table_body=table_body %}
+      {% include 'componentes/tabla.jinja' with table_body=table_body ruta="Update_Cargo" modelo="Cargo" %}
     </div>
+    {% include 'componentes/add-btn.jinja' with name="Crear_Cargo" %}
   </div>
 {% endblock body %}

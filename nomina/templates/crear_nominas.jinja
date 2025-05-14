@@ -1,0 +1,43 @@
+{% extends 'index.jinja' %}
+
+{% block titulo %}
+  <title>Crear Nomina</title>
+{% endblock titulo %}
+
+{% block body %}
+  <div class="container">
+    <div class="card p-4 mx-auto d-block" style="width: 40em;">
+      <h2 class="text-center">Crear Rol De Pago</h2>
+      <form method="post" action="{% url 'Crear_Nomina' %}">
+        {% csrf_token %}
+        <div class="gap-3 d-flex flex-column">
+          <div class="row">
+            <div class="col">
+              <label class="form-lable" for="id_empleado">Empleado</label>
+              {{ formulario.empleado }}
+            </div>
+            <div class="col">
+              <label class="form-lable" for="id_aniomes">Anio Mes</label>
+              {{ formulario.aniomes }}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <label class="form-label" for="id_bono">Bono</label>
+              {{ formulario.bono }}
+            </div>
+            <div class="col">
+              <label class="form-label" for="id_horas_extra"
+                >Horas Extras</label
+              >
+              {{ formulario.horas_extra }}
+            </div>
+          </div>
+          <div class="row">
+            <button class="btn-primary btn" typr="submit">Crear</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+{% endblock body %}

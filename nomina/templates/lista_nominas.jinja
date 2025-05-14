@@ -11,7 +11,8 @@
       <h1>Listado de empleados</h1>
     </div>
     <div class="row">
-      {% include 'componentes/tabla.jinja' with table_body=table_body %}
+      {% include 'componentes/tabla.jinja' with table_body=table_body ruta="Update_Empleado" modelo="Empleado" %}
     </div>
+    {% include 'componentes/add-btn.jinja' with name="Crear_Empleado" %}
   </div>
 {% endblock body %}

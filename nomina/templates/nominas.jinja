@@ -11,7 +11,8 @@
       <h1>Listado de nominas</h1>
     </div>
     <div class="row">
-      {% include 'componentes/tabla.jinja' with table_body=table_body %}
+      {% include 'componentes/tabla.jinja' with table_body=table_body ruta="Update_Nomina" modelo="Nomina" %}
     </div>
+    {% include 'componentes/add-btn.jinja' with name="Crear_Nomina" %}
   </div>
 {% endblock body %}

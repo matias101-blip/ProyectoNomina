@@ -1,7 +1,7 @@
 {% extends 'index.jinja' %}
 
 {% block titulo %}
-  <title>Listado de Cargos</title>
+  <title>Listado de Contratos</title>
 {% endblock titulo %}
 
 {% block body %}
@@ -11,7 +11,8 @@
       <h1>Listado de Cargos</h1>
     </div>
     <div class="row">
-      {% include 'componentes/tabla.jinja' with table_body=table_body %}
+      {% include 'componentes/tabla.jinja' with table_body=table_body ruta="Update_Contrato" modelo="Contrato" %}
     </div>
+    {% include 'componentes/add-btn.jinja' with name="Crear_Contrato" %}
   </div>
 {% endblock body %}
