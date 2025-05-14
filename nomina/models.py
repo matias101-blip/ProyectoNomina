@@ -5,12 +5,19 @@ from django.db import models
 
 class Cargo(models.Model):
     descripcion = models.CharField(max_length=100)
+    def __str__(self):
+        return self.descripcion
 
 class Departamento(models.Model):
     descripcion = models.CharField(max_length=100)
+    def __str__(self):
+        return self.descripcion
 
 class TipoContrato(models.Model):
     descripcion = models.CharField(max_length=100)
+    def __str__(self):
+        return self.descripcion
+
 
 class Empleado(models.Model):
     SEXO_CHOICES = [
@@ -28,6 +35,9 @@ class Empleado(models.Model):
     on_delete=models.CASCADE)
     tipo_contrato = models.ForeignKey(TipoContrato,
     on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.nombre
 
 class Rol(models.Model):
     empleado = models.ForeignKey(Empleado, on_delete=models.CASCADE)

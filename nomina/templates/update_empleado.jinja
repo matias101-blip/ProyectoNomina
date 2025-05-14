@@ -1,0 +1,63 @@
+{% extends 'index.jinja' %}
+
+{% block titulo %}
+  <title>Actualizar Empleado</title>
+{% endblock titulo %}
+
+{% block body %}
+  <div class="container">
+    <div class="card p-4 mx-auto d-block" style="width: 40em;">
+      <h2 class="text-center">Actualizar Empleado</h2>
+      <form method="post" action="{% url 'Update_Empleado' id %}">
+        {% csrf_token %}
+        <div class="gap-3 d-flex flex-column">
+          <div class="row">
+            <div class="col">
+              <label class="form-lable" for="id_nombre">Nombre</label>
+              {{ formulario.nombre }}
+            </div>
+            <div class="col">
+              <label class="form-lable" for="id_cedula">cedula</label>
+              {{ formulario.cedula }}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <label class="form-label" for="id_sueldo">Sueldo</label>
+              {{ formulario.sueldo }}
+            </div>
+            <div class="col">
+              <label class="form-label" for="id_sexo">Horas Extras</label>
+              {{ formulario.sexo }}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <label class="form-label" for="id_cargo">Cargo</label>
+              {{ formulario.cargo }}
+            </div>
+            <div class="col">
+              <label class="form-label" for="id_departamento"
+                >Departamento</label
+              >
+              {{ formulario.departamento }}
+            </div>
+            <div class="col">
+              <label class="form-label" for="id_tipo_contrato">Contrato</label>
+              {{ formulario.tipo_contrato }}
+            </div>
+            <div class="col">
+              <label class="form-label" for="id_tipo_direccion"
+                >direccion</label
+              >
+              {{ formulario.direccion }}
+            </div>
+          </div>
+          <div class="row">
+            <button class="btn-primary btn" type="submit">Actualizar</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+{% endblock body %}

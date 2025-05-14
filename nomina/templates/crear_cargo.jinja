@@ -1,0 +1,27 @@
+{% extends 'index.jinja' %}
+
+{% block titulo %}
+  <title>Crear {{ tipo }}</title>
+{% endblock titulo %}
+
+{% block body %}
+  <div class="container">
+    <div class="card p-4 mx-auto d-block" style="width: 40em;">
+      <h2 class="text-center">Crear Un {{ tipo }}</h2>
+      <form method="post" action="{% url name %}">
+        {% csrf_token %}
+        <div class="gap-3 d-flex flex-column">
+          <div class="row">
+            <div class="col">
+              <label class="form-lable" for="id_descripcion">{{ tipo }}</label>
+              {{ formulario.descripcion }}
+            </div>
+          </div>
+          <div class="row">
+            <button class="btn-primary btn" typr="submit">Crear</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+{% endblock body %}
