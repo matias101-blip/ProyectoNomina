@@ -27,7 +27,7 @@ def Secion(request):
                 user = User.objects.create_user(username=request.POST['username'], password=request.POST['password1'])
                 user.save()
                 login(request,user)
-                return HttpResponseRedirect('/listado/')
+                return redirect('Lista')
 
 
             except IntegrityError:
@@ -42,7 +42,7 @@ def Secion(request):
 
 def singout(request):
     logout(request)
-    return HttpResponseRedirect('/')
+    return redirect('Inicio')
 
 def signin(request):
     if request.method == 'GET':
