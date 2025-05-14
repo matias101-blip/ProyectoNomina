@@ -1,13 +1,70 @@
 {% extends 'index.jinja' %}
 
 {% block titulo %}
-    <title>Inicio</title>
+  <title>Inicio</title>
 {% endblock titulo %}
 
-
 {% block body %}
-    <div class="container justify-content-center display-flex">
-        <h2>Hentai</h2>
+  <div class="Encabezado bg-dark mt-5">
+    <div class="container text-light p-5">
+      <div class="row">
+        <div
+          class="col d-flex flex-column justify-content-center align-items-center gap-2"
+        >
+          <h2>Gestion de nominas</h2>
+          <button class=" btn btn-primary">Inicia tu gestion</button>
+        </div>
+        <div class="col">
+          <img
+            class="mx-auto d-block"
+            alt="Imagen de inicio"
+            src="https://static.wikia.nocookie.net/hollowknight/images/2/24/Millibelle.png/revision/latest?cb=20180528034357"
+          />
+        </div>
+      </div>
     </div>
-    <h1>Estamos en el inicio</h1>
+  </div>
+  <div class="Seccion1 mt-5">
+    <h1 class="text-center">Porque gestionar con nosotros?</h1>
+    <div class="mx-auto d-block p-3" style="width: 35em;">
+      <p class="fs-4">
+        Nuestro equipo desarrollo una logica preciza para que puedas agregar a
+        tus empleados y poder generar tu nominas de pago de la manera mas comoda
+        posible y segura...
+      </p>
+    </div>
+  </div>
+  <div class="Seccion2 mt-5 bg-dark p-5">
+    <div class="container">
+      <div class="row gap-3">
+        <div class="col">
+          <div class="card text-center text-bg-dark border-light">
+            <div class="card-body">
+              <h2 class="card-title">Empleados:</h2>
+              <p class="btn disabled">1</p>
+              <p class="fs-4 card-text">Empleados registrados</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card text-center text-bg-dark border-light">
+            <div class="card-body">
+              <h2 class="">Cargos:</h2>
+              <p class="btn disabled">3</p>
+              <p class="fs-4 card-text">Cargos disponibles</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card text-center text-bg-dark border-light">
+            <div class="card-body">
+              <h2 class="">Nominas</h2>
+              <p class="btn disabled">0</p>
+              <p class="fs-4 card-text">Nominas generadas</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 {% endblock body %}
