@@ -1,0 +1,15 @@
+<ul class="nav nav-tabs mb-3">
+  <li class="nav-item">
+    <a class="nav-link {{ empleado }}" href="{% url 'Lista' %}">Empleados</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link {{ nominas }}" href="{% url 'ListadoNominas' %}">Nominas</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link {{ depa }}" href="{% url 'ListadoDepartamento' %}">Departamentos</a>
+  </li>
+  <li class="nav-item"><a class="nav-link {{ cargo }}" href="{% url 'ListadoCargo' %}">Cargos</a></li>
+  <li class="nav-item">
+    <a class="nav-link {{ contrato }}" href="{% url 'ListadoContrato' %}">Contrato</a>
+  </li>
+</ul>

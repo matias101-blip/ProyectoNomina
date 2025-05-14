@@ -1,14 +1,14 @@
 {% extends 'index.jinja' %}
 
 {% block titulo %}
-  <title>Listado de nominas</title>
+  <title>Listado de Cargos</title>
 {% endblock titulo %}
 
 {% block body %}
   <div class="container mt-3">
-    {% include 'componentes/tab.jinja' with empleado="active" nominas="" depa="" cargo="" contrato="" %}
+    {% include 'componentes/tab.jinja' with empleado="" nominas="" depa="" cargo="" contrato="active" %}
     <div class="row">
-      <h1>Listado de empleados</h1>
+      <h1>Listado de Cargos</h1>
     </div>
     <div class="row">
       {% include 'componentes/tabla.jinja' with table_body=table_body %}
